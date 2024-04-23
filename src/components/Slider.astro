@@ -1,0 +1,81 @@
+---
+
+---
+
+<div class="w-full hero h-[450px] md:h-[650px]">
+  <div class="swiper sample-slider">
+    <div class="swiper-wrapper" id="slider">
+      <div class="swiper-slide" data-swiper-autoplay="2500"><img src="/slider-1.jpg" alt="Imagen Slider" loading="lazy"></div>
+      <div class="swiper-slide" data-swiper-autoplay="2500"><img src="/swiper2.png" alt="Imagen Slider" loading="lazy"></div>
+      <div class="swiper-slide" data-swiper-autoplay="2500"><img src="/swiper3.png" alt="Imagen Slider" loading="lazy"></div>
+    </div>
+  </div>
+  <div class="text-bienvenida">
+   <h1>¡ Bienvenidos a Dental Valley !</h1>
+   
+  </div>
+</div>  
+
+<style>
+.hero{
+  position:relative;
+}
+.text-bienvenida{
+  width:70%;
+  background-color:#cc9900;
+  position:absolute;
+  bottom:5%;
+  left:15%;
+  z-index:1;
+  padding:15px;
+  text-align:center;
+  font-weight:600;
+}
+.text-bienvenida h1{
+  color:white;
+  font-size:20px;
+}
+  .sample-slider{
+    width: 100%;
+    height: 100%;
+  }
+  .sample-slider img{
+    width: 100%;
+    object-fit: cover;
+    height: -webkit-fill-available;
+  }
+
+  @media(min-width: 768px){
+    .text-bienvenida{
+  width:50%;
+  background-color:#cc9900;
+  position:absolute;
+  bottom:5%;
+  left:25%;
+  z-index:1;
+  padding:15px;
+  text-align:center;
+  font-weight:600;
+}
+    .text-bienvenida h1{
+  color:white;
+  font-size:28px;
+}
+  }
+</style>
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, EffectFade } from 'swiper/modules';
+  const swiper = new Swiper('.sample-slider', {
+    modules: [Autoplay, EffectFade],
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+  });
+</script>

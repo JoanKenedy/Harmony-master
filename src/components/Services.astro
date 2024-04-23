@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string,
+  p: string,
+  img: string,
+}
+const { p, title, img } = Astro.props;
+---
+
+<div class="card p-2 rounded-md bg-gradient-to-tr from-blue-100 to-[rgb(20,_20,_72)] transition-all hover:transition-all md:h-full md:w-full md:max-w-[350px]">
+  <img src={img} alt="Promoción" class="w-full">
+  <div class="uppercase font-semibold text-gold-100 px-2 pt-3 text-sm md:text-lg"> {title} </div>
+  <div class="font-semibold text-white p-2">
+    <p class="mb-2 md:text-base">{p}</p>
+    <a class="author" href="https://api.whatsapp.com/send?phone=573001518017" target="_blank" title="Número de WhatsApp de la clínica" rel="noopener noreferrer"> Llame ya </a>
+  </div>
+</div>
+
+<style>
+.author {
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  padding-top: 20px;
+  transition: all 0.275s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+}
+.author::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  border-radius: 15px;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.275s ease-in-out;
+}
+.author:hover::before {
+  width: 100%;
+}
+</style>

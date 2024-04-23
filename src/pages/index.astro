@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Slider from '../components/Slider.astro'
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Promotions from "../components/Promotions.astro";
+import Services from '../components/Services.astro';
+import Reviews from '../components/Reviews.astro';
+import Direction from '../components/Direction.astro';
+// import PediatricDentistry from '../components/PediatricDentistry.astro'
+// import Galeria from '../components/Galeria.astro'
+---
+
+<Layout title="Harmony Dental Clinic">
+	<main>
+		<Header />
+		<Slider />
+		<Hero />
+		<!-- <PediatricDentistry /> -->
+		<!-- <Galeria /> -->
+		<Promotions />
+		<section class="w-full flex justify-center items-center py-14" id="Tratamientos">
+			<div class="w-full flex justify-center items-center flex-col px-4">
+				<h2 class=" font-bold text-center text-4xl mb-5 md:text-6xl">Nuestros <strong class="text-gold-200">servicios dentales</strong></h2>
+				<div class="services w-full grid place-content-center place-items-center gap-8">
+					<Services 
+						p='Alinear los dientes no sólo contribuye a tener una sonrisa bonita, sino también ayuda a tener una dentadura sana.'
+						title='Ortodoncia'
+						img='/ortodoncia.webp'
+					/>
+					<Services 
+						p='Tenemos a los mejores especialistas en rehabilitación oral, obtén la estética y armonía oral que deseaste.'
+						title='Rehabilitación Oral'
+						img='/oral.webp'
+					/>
+					<Services 
+						p='Obtén la sonrisa que deseas, nuestros expertos en diseño de sonrisa te harán tener una sonrisa única.'
+						title='Diseño de sonrisa'
+						img='/sonrisa.webp'
+					/>
+				</div>
+			</div>
+		</section>
+		<Reviews />
+		<Direction />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.services {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	@media (min-width: 768px) {
+		.services {
+			grid-template-columns: repeat(3, minmax(0px, 350px));
+		}
+	}
+
+</style>
